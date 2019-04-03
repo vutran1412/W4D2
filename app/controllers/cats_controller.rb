@@ -22,6 +22,7 @@ class CatsController < ApplicationController
     def edit 
         @colors = Cat::COLORS
         @cat = Cat.find_by(id: params[:id])
+        if @cat   
         render :edit
     end
 
