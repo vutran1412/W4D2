@@ -1,0 +1,25 @@
+<h1>Create A New Cat!</h1>
+
+<form action="<%=cats_url%>" method="post">
+    <label>Cat name: 
+        <input type="text" name="cat[name]">
+    </label>
+    <label>Birthday:
+        <input type="date" name="cat[birth_date]">
+    </label>
+    <label>Sex:
+        <input type="radio" name="cat[sex]" value="M">M
+        <input type="radio" name="cat[sex]" value="F">F
+    </label>
+    <label>Description:
+
+        <textarea name="cat[description]" id="description" cols="30" rows="10"></textarea>
+    </label>
+    <select id="color" name="color">Color:
+        <option value="color" disabled="true" selected="true">--select color--</option>
+        <% @colors.each do |color|%>
+        <option value="<%=color%>"><%=color%></option>
+        <% end %>
+    </select>
+    <input type="submit" name="submit button" id="" value="Create New Cat">
+</form>
